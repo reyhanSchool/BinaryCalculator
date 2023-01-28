@@ -12,7 +12,7 @@ import org.junit.Test;
 public class BinaryTest
 {
     /**
-     * Test The constructor with a valid binary vallue
+     * Test the constructor with a valid binary vallue
      */
     @Test
     public void normalConstructor()
@@ -21,7 +21,7 @@ public class BinaryTest
         assertTrue( binary.getValue().equals("1001001"));
     }
     /**
-     * Test The constructor with an invalid binary value of out-of-range digits
+     * Test the constructor with an invalid binary value of out-of-range digits
      */
     @Test
     public void constructorWithInvalidDigits()
@@ -30,7 +30,7 @@ public class BinaryTest
         assertTrue( binary.getValue().equals("0"));
     }
     /**
-     * Test The constructor with an invalid binary value of alphabetic characters
+     * Test the constructor with an invalid binary value of alphabetic characters
      */
     @Test
     public void constructorWithInvalidChars()
@@ -39,7 +39,7 @@ public class BinaryTest
         assertTrue( binary.getValue().equals("0"));
     }
     /**
-     * Test The constructor with an invalid binary value that has a sign
+     * Test the constructor with an invalid binary value that has a sign
      */
     @Test
     public void constructorWithNegativeSign()
@@ -48,7 +48,7 @@ public class BinaryTest
         assertTrue( binary.getValue().equals("0"));
     }
     /**
-     * T	est The constructor with a zero tailing valid binary value
+     * Test the constructor with a zero tailing valid binary value
      */
     @Test
     public void constructorWithZeroTailing()
@@ -57,7 +57,7 @@ public class BinaryTest
         assertTrue( binary.getValue().equals("1001"));
     }
     /**
-     * Test The constructor with an empty string
+     * Test the constructor with an empty string
      */
     @Test
     public void constructorEmptyString()
@@ -66,7 +66,7 @@ public class BinaryTest
         assertTrue( binary.getValue().equals("0"));
     }
     /**
-     * Test The add functions with two binary numbers of the same length
+     * Test the add function with two binary numbers of the same length
      */
     @Test
     public void add()
@@ -77,7 +77,7 @@ public class BinaryTest
         assertTrue( binary3.getValue().equals("10111"));
     }
     /**
-     * Test The add functions with two binary numbers, the length of the first argument is less than the second
+     * Test the add function with two binary numbers, the length of the first argument is less than the second
      */
     @Test
     public void add2()
@@ -88,7 +88,7 @@ public class BinaryTest
         assertEquals("1101", binary3.getValue());
     }
     /**
-     * Test The add functions with two binary numbers, the length of the first argument is greater than the second
+     * Test the add function with two binary numbers, the length of the first argument is greater than the second
      */
     @Test
     public void add3()
@@ -99,7 +99,7 @@ public class BinaryTest
         assertEquals("1101", binary3.getValue());
     }
     /**
-     * Test The add functions with a binary numbers with zero
+     * Test the add function with a binary numbers with zero
      */
     @Test
     public void add4()
@@ -110,7 +110,7 @@ public class BinaryTest
         assertEquals("1010", binary3.getValue());
     }
     /**
-     * Test The add functions with two zeros
+     * Test the add function with two zeros
      */
     @Test
     public void add5()
@@ -120,7 +120,9 @@ public class BinaryTest
         Binary binary3=Binary.add(binary1,binary2);
         assertEquals("0", binary3.getValue());
     }
-
+    /**
+     * Test the and function with two binary numbers, all ones and all zeros respectively
+     */
     @Test
     public void and(){
         Binary binary1 = new Binary("11111");
@@ -128,6 +130,9 @@ public class BinaryTest
         Binary binary3= Binary.AND(binary1, binary2);
         assertEquals("0", binary3.getValue());
     }
+    /**
+     * Test the and function with two binary numbers, the length of the first argument is greater than the second argument
+     */
 
     @Test
     public void and2(){
@@ -136,7 +141,9 @@ public class BinaryTest
         Binary binary3= Binary.AND(binary1, binary2);
         assertEquals("10", binary3.getValue());
     }
-
+    /**
+     * Test the and function with two binary numbers, the length of the first argument is less than the second argument
+     */
     @Test
     public void and3(){
         Binary binary1 = new Binary("10101");
@@ -144,7 +151,9 @@ public class BinaryTest
         Binary binary3= Binary.AND(binary1, binary2);
         assertEquals("101", binary3.getValue());
     }
-
+    /**
+     * Test the or function with two binary numbers, both of the same length 
+     */
     @Test
     public void or(){
         Binary binary1 = new Binary("1111");
@@ -152,7 +161,9 @@ public class BinaryTest
         Binary binary3= Binary.OR(binary1,binary2);
         assertEquals("1111", binary3.getValue());
     }
-
+    /**
+     * Test the or function with two binary numbers, the length of the first argument is greater than the second argument
+     */
     @Test
     public void or2(){
         Binary binary1 = new Binary("1000");
@@ -160,7 +171,9 @@ public class BinaryTest
         Binary binary3= Binary.OR(binary1,binary2);
         assertEquals("1001", binary3.getValue());
     }
-
+    /**
+     * Test the or function with two binary numbers, the length of the first argument is greater than the second argument and the second argument is a zero
+     */
     @Test
     public void or3(){
         Binary binary1 = new Binary("1000111111111");
@@ -168,6 +181,9 @@ public class BinaryTest
         Binary binary3= Binary.OR(binary1,binary2);
         assertEquals("1000111111111", binary3.getValue());
     }
+    /**
+     * Test the multiply function with two binary numbers, the length of the first argument is greater than the second argument and the second argument is a zero
+     */
     @Test
     public void multiply(){
         Binary binary1 = new Binary("101111111");
