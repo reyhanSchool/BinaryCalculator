@@ -191,6 +191,9 @@ public class BinaryTest
         Binary binary3= Binary.Multiply(binary1,binary2);
         assertEquals("0", binary3.getValue());
     }
+    /**
+     * Test the multiply function with two binary numbers, the length of the first argument is greater than the second argument
+     */
     @Test
     public void multiply2(){
         Binary binary1 = new Binary("1000111111111");
@@ -198,6 +201,9 @@ public class BinaryTest
         Binary binary3= Binary.Multiply(binary1,binary2);
         assertEquals("1110111001110010110", binary3.getValue());
     }
+    /**
+     * Test the multiply function with two binary numbers, the length of the first argument is greater than the second argument
+     */
     @Test
     public void multiply3(){
         Binary binary1 = new Binary("10111");
